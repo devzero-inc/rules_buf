@@ -71,6 +71,7 @@ def _buf_dependencies_impl(ctx):
         "fix",
         "-repo_root",
         ctx.path(""),
+        "-bzlmod",
     ]
     res = ctx.execute(cmd, quiet = False)
     if res.return_code != 0:
