@@ -72,6 +72,7 @@ def _buf_dependencies_impl(ctx):
         "-repo_root",
         ctx.path(""),
         "-bzlmod",
+        ctx.path("")
     ]
     print(cmd)
     res = ctx.execute(cmd, quiet = False, working_directory = str(ctx.path("")))
