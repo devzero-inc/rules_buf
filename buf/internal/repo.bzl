@@ -73,7 +73,8 @@ def _buf_dependencies_impl(ctx):
         ctx.path(""),
         "-bzlmod",
     ]
-    res = ctx.execute(cmd, quiet = False)
+    print(cmd)
+    res = ctx.execute(cmd, quiet = False, working_directory = str(ctx.path("")))
     if res.return_code != 0:
         fail("failed with code: {}, error: {}".format(res.return_code, res.stderr))
 
